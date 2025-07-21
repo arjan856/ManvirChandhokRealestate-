@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listings in Edmonton - MavirChandhok_Realty</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background: #f5f5f5;
+      }
+      .listings-header {
+        font-size: 2.2em;
+        font-weight: bold;
+        color: #222;
+        letter-spacing: 0.10em;
+        margin-bottom: 40px;
+        margin-top: 60px;
+        text-align: center;
+      }
+      .listings-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 48px;
+        margin-bottom: 80px;
+        flex-wrap: wrap;
+      }
+      .listing-card {
+        flex: 1 1 0;
+        min-width: 340px;
+        max-width: 420px;
+        background: #fff;
+        border-radius: 20px;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 0;
+        position: relative;
+        overflow: hidden;
+        border: 2px solid #e0e0e0;
+      }
+      .listing-image-container {
+        width: 100%;
+        height: 300px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #f3f3f3;
+      }
+      .listing-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 20px 20px 0 0;
+      }
+      .movein-banner {
+        position: absolute;
+        top: 18px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #1976d2;
+        color: #fff;
+        font-weight: bold;
+        font-size: 1.1em;
+        padding: 6px 24px;
+        border-radius: 10px;
+        letter-spacing: 0.08em;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+        opacity: 0.93;
+      }
+      .listing-details {
+        width: 100%;
+        padding: 28px 28px 18px 28px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        background: #fff;
+      }
+      .listing-price {
+        color: #1976d2;
+        font-size: 1.5em;
+        font-weight: bold;
+        margin-bottom: 10px;
+        letter-spacing: 0.04em;
+      }
+      .listing-location {
+        color: #1976d2;
+        font-size: 1.15em;
+        font-weight: 600;
+        margin-bottom: 6px;
+        letter-spacing: 0.03em;
+      }
+      .listing-sqft {
+        color: #1976d2;
+        font-size: 1.08em;
+        margin-bottom: 12px;
+        letter-spacing: 0.02em;
+      }
+      .listing-icons {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 14px;
+      }
+      .listing-icons img {
+        width: 22px;
+        height: 22px;
+        margin-right: 3px;
+        vertical-align: middle;
+      }
+      .listing-desc {
+        color: #444;
+        font-size: 1.08em;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        letter-spacing: 0.01em;
+        line-height: 1.6;
+      }
+      @media (max-width: 1200px) {
+        .listings-row {
+          flex-direction: column;
+          gap: 40px;
+          align-items: center;
+        }
+        .listing-card {
+          max-width: 98vw;
+        }
+      }
+    </style>
+</head>
+<body>
+  <div class="listings-header">L I S T I N G S &nbsp; I N &nbsp; E D M O N T O N</div>
+  <div class="listings-row">
+    <div class="listing-card">
+      <div class="listing-image-container">
+        <img src="atlas.jpg" alt="Atlas Home" class="listing-image">
+        <div class="movein-banner">MOVE-IN READY</div>
+      </div>
+      <div class="listing-details">
+        <div class="listing-price">$739,250</div>
+        <div class="listing-location">South East Laurel</div>
+        <div class="listing-sqft">2,413 sq. ft.</div>
+        <div class="listing-icons">
+          <img src="bedicon.jpg" alt="bed">5
+          <img src="bathroom.jpg" alt="bath">4
+        </div>
+        <div class="listing-desc">A stunning, move-in ready home in South East Laurel with 5 bedrooms and 4 bathrooms. Spacious, modern, and perfect for families seeking comfort and style. Enjoy a large backyard, open-concept living, and high-end finishes throughout.</div>
+      </div>
+    </div>
+    <div class="listing-card">
+      <div class="listing-image-container">
+        <img src="accolade.jpg" alt="Accolade Home" class="listing-image">
+        <div class="movein-banner">MOVE-IN READY</div>
+      </div>
+      <div class="listing-details">
+        <div class="listing-price">$699,250</div>
+        <div class="listing-location">4531-71 Ave Beaumont</div>
+        <div class="listing-sqft">2,315 sq. ft.</div>
+        <div class="listing-icons">
+          <img src="bedicon.jpg" alt="bed">3
+          <img src="bathroom.jpg" alt="bath">3
+        </div>
+        <div class="listing-desc">A beautiful, move-in ready home in Beaumont with 3 bedrooms and 3 bathrooms. Modern finishes, a welcoming neighborhood, and a layout perfect for growing families. Features a chef’s kitchen and a sun-filled living area.</div>
+      </div>
+    </div>
+    <div class="listing-card">
+      <div class="listing-image-container">
+        <img src="assurance home.jpg" alt="Assurance Home" class="listing-image">
+        <div class="movein-banner">MOVE-IN READY</div>
+      </div>
+      <div class="listing-details">
+        <div class="listing-price">$709,900</div>
+        <div class="listing-location">2828 191 STREET NW Edmonton</div>
+        <div class="listing-sqft">2,128 sq. ft.</div>
+        <div class="listing-icons">
+          <img src="bedicon.jpg" alt="bed">5
+          <img src="bathroom.jpg" alt="bath">3
+        </div>
+        <div class="listing-desc">A spacious, move-in ready home in West Edmonton with 5 bedrooms and 3 bathrooms. Ideal for large families and those who love to entertain. Features a finished basement, double garage, and a quiet street location.</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

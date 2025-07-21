@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manvir Chandhok Realty | Edmonton Real Estate Professional</title>
+    <meta name="description" content="Manvir Chandhok, MBA - Professional real estate services in Edmonton. Find your dream home with our expert team.">
+    <meta name="keywords" content="Edmonton real estate, home for sale, Manvir Chandhok, Sterling Realty, Alberta homes">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.ico">
+    
+    <style>
+        /* Add this new style for the arrow icon */
+        .back-to-top i::before {
+            content: "↑";
+            font-size: 1.5em;
+        }
+        /* Global Styles */
+        :root {
+            --primary-color: #1976d2;
+            --secondary-color: #0d47a1;
+            --accent-color: #ff6d00;
+            --dark-color: #222;
+            --light-color: #f5f5f5;
+            --text-color: #333;
+            --text-light: #666;
+            --white: #fff;
+            --transition: all 0.3s ease;
+            --box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            --border-radius: 8px;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+            background: var(--light-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: var(--border-radius);
+            font-weight: 500;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .btn:hover {
+            background: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+        
+        .btn-accent {
+            background: var(--accent-color);
+        }
+        
+        .btn-accent:hover {
+            background: #e65100;
+        }
+        
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+            color: var(--dark-color);
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--primary-color);
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+        
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(30, 30, 30, 0.9);
+            padding: 15px 0;
+            z-index: 1000;
+            transition: var(--transition);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+        }
+        
+        .navbar.scrolled {
+            background: rgba(30, 30, 30, 0.95);
+            padding: 10px 0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .navbar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            color: var(--white);
+            font-size: 1.8rem;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .logo span {
+            color: var(--primary-color);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            color: var(--white);
+            font-weight: 500;
+            position: relative;
+            padding: 5px 0;
+        }
+        
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            overflow: hidden;
+        }
+        
+        .hero:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1;
+        }
+        
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            animation: fadeInUp 1s ease;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 1s ease 0.3s forwards;
+            opacity: 0;
+        }
+        
+        .hero-btn {
+            animation: fadeInUp 1s ease 0.6s forwards;
+            opacity: 0;
+        }
+        
+        /* About Section */
+        .about {
+            background: var(--white);
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .feature-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            text-align: center;
+            border-top: 3px solid var(--primary-color);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .feature-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        /* Listings Section */
+        .listings {
+            background: var(--light-color);
+        }
+        
+        .listings-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .listing-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+        
+        .listing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .listing-img-container {
+            height: 250px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .listing-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .listing-card:hover .listing-img {
+            transform: scale(1.05);
+        }
+        
+        .listing-badge {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: var(--accent-color);
+            color: var(--white);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        .listing-details {
+            padding: 20px;
+        }
+        
+        .listing-price {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .listing-address {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+        
+        .listing-features {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            color: var(--text-light);
+        }
+        
+        .listing-features span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .listing-features i {
+            color: var(--primary-color);
+        }
+        
+        .listing-desc {
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+        
+        .view-more {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            background: var(--white);
+            border: 2px dashed var(--primary-color);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            text-align: center;
+            transition: var(--transition);
+            height: 100%;
+        }
+        
+        .view-more:hover {
+            background: rgba(25, 118, 210, 0.05);
+        }
+        
+        .view-more i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        /* Why Edmonton Section */
+        .why-edmonton {
+            background: var(--white);
+        }
+        
+        .why-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            margin-top: 50px;
+        }
+        
+        .why-text p {
+            margin-bottom: 20px;
+        }
+        
+        .why-img {
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            overflow: hidden;
+        }
+        
+        .why-img img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+        
+        /* Agent Section */
+        .agent {
+            background: var(--light-color);
+        }
+        
+        .agent-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            margin-top: 50px;
+        }
+        
+        .agent-img {
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            overflow: hidden;
+        }
+        
+        .agent-img img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+        
+        .agent-info h3 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+        
+        .agent-title {
+            color: var(--primary-color);
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .agent-bio {
+            margin-bottom: 20px;
+        }
+        
+        .agent-stats {
+            margin-bottom: 30px;
+        }
+        
+        .agent-stats li {
+            margin-bottom: 10px;
+            list-style-type: none;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .agent-stats li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background: var(--white);
+        }
+        
+        .contact-content {
+            max-width: 600px;
+            margin: 50px auto 0;
+            text-align: center;
+        }
+        
+        .contact-email {
+            display: inline-block;
+            margin: 20px 0;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .social-link {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+        
+        .social-link:hover {
+            background: var(--secondary-color);
+            transform: translateY(-5px);
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--dark-color);
+            color: var(--white);
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .footer-logo span {
+            color: var(--primary-color);
+        }
+
+        .footer-social-img {
+            width: 28px;
+            height: 28px;
+            display: block;
+            margin: 0 auto 4px auto;
+            border-radius: 6px;
+            object-fit: cover;
+        }
+        
+        .footer-about {
+            margin-bottom: 20px;
+        }
+        
+        .footer-title {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--primary-color);
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+            list-style: none;
+        }
+        
+        .footer-links a {
+            color: #aaa;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary-color);
+            padding-left: 5px;
+        }
+        
+        .footer-contact-info {
+            margin-bottom: 20px;
+        }
+        
+        .footer-contact-info li {
+            margin-bottom: 10px;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .footer-contact-info i {
+            color: var(--primary-color);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        /* Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+        }
+        
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background: var(--secondary-color);
+        }
+        
+        /* Modal */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1001;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+        
+        .modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .modal-content {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+            transform: translateY(-50px);
+            transition: var(--transition);
+        }
+        
+        .modal.active .modal-content {
+            transform: translateY(0);
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-light);
+            transition: var(--transition);
+        }
+        
+        .modal-close:hover {
+            color: var(--primary-color);
+        }
+        
+        .modal-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-family: inherit;
+            transition: var(--transition);
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.2);
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-check {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .form-check-input {
+            margin-right: 10px;
+        }
+        
+        .form-submit {
+            width: 100%;
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .hero-title {
+                font-size: 3rem;
+            }
+            
+            .why-content, .agent-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .why-img, .agent-img {
+                order: -1;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .section {
+                padding: 60px 0;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: var(--dark-color);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 30px;
+                transition: var(--transition);
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .hamburger {
+                display: block;
+                color: var(--white);
+                font-size: 1.5rem;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .section {
+                padding: 50px 0;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .btn {
+                padding: 10px 25px;
+            }
+            
+            .listings-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="#" class="logo">Manvir<span>Chandhok</span></a>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#listings">Listings</a>
+                <a href="#why-edmonton">Why Edmonton</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <img src="R.jpg" alt="Edmonton Real Estate" class="hero-bg">
+        <div class="hero-content">
+            <h1 class="hero-title">Find Your Perfect Home Today</h1>
+            <p class="hero-subtitle">With over 50 homes sold across Alberta, Manvir Chandhok brings expertise and dedication to help you navigate the Edmonton real estate market</p>
+            <a href="#listings" class="btn hero-btn">View Listings</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about" id="about">
+        <div class="container">
+            <h2 class="section-title">Our Approach</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3 class="feature-title">Simplicity</h3>
+                    <p>We make every step of the process simple, whether you're a first-time buyer or seasoned investor. Our team provides clear guidance and transparent communication to ensure a smooth experience from start to finish.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="feature-title">Fast Service</h3>
+                    <p>Get your property listed immediately and start attracting buyers quickly. Our streamlined process and responsive team ensure your property gets maximum exposure with minimal waiting time.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3 class="feature-title">Family</h3>
+                    <p>We treat every client like family, offering personalized service with integrity. Our commitment goes beyond transactions - we build lasting relationships and support your real estate goals every step of the way.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Listings Section -->
+    <section class="section listings" id="listings">
+        <div class="container">
+            <h2 class="section-title">Featured Listings in Edmonton</h2>
+            <div class="listings-grid">
+                <div class="listing-card">
+                    <div class="listing-img-container">
+                        <img src="atlas.jpg" alt="South East Laurel Home" class="listing-img">
+                        <span class="listing-badge">Move-In Ready</span>
+                    </div>
+                    <div class="listing-details">
+                        <div class="listing-price">$739,250</div>
+                        <div class="listing-address">South East Laurel</div>
+                        <div class="listing-features">
+                            <span><i class="fas fa-bed"></i> 5 Beds</span>
+                            <span><i class="fas fa-bath"></i> 4 Baths</span>
+                            <span><i class="fas fa-ruler-combined"></i> 2,413 sq.ft.</span>
+                        </div>
+                        <p class="listing-desc">Stunning move-in ready home with 5 bedrooms and 4 bathrooms. Features spacious layout, modern finishes, and a beautiful backyard perfect for family gatherings.</p>
+                        <a href="https://www.sterlingedmonton.com/quick-possessions/?page=1&sqft_range=sqft-2400_5000" class="btn" target="_blank" rel="noopener">View Details</a>
+                    </div>
+                </div>
+                
+                <div class="listing-card">
+                    <div class="listing-img-container">
+                        <img src="accolade.jpg" alt="Beaumont Home" class="listing-img">
+                        <span class="listing-badge">Move-In Ready</span>
+                    </div>
+                    <div class="listing-details">
+                        <div class="listing-price">$699,250</div>
+                        <div class="listing-address">4531-71 Ave Beaumont</div>
+                        <div class="listing-features">
+                            <span><i class="fas fa-bed"></i> 3 Beds</span>
+                            <span><i class="fas fa-bath"></i> 3 Baths</span>
+                            <span><i class="fas fa-ruler-combined"></i> 2,315 sq.ft.</span>
+                        </div>
+                        <p class="listing-desc">Beautiful home in Beaumont with 3 bedrooms and 3 bathrooms. Features chef's kitchen, open concept living, and a welcoming neighborhood atmosphere.</p>
+                        <a href="https://www.sterlingedmonton.com/quick-possessions/?page=1&sqft_range=sqft-2400_5000" class="btn" target="_blank" rel="noopener">View Details</a>
+                    </div>
+                </div>
+                
+                <div class="listing-card">
+                    <div class="listing-img-container">
+                        <img src="assurance home.jpg" alt="West Edmonton Home" class="listing-img">
+                        <span class="listing-badge">Move-In Ready</span>
+                    </div>
+                    <div class="listing-details">
+                        <div class="listing-price">$709,900</div>
+                        <div class="listing-address">2828 191 STREET NW Edmonton</div>
+                        <div class="listing-features">
+                            <span><i class="fas fa-bed"></i> 5 Beds</span>
+                            <span><i class="fas fa-bath"></i> 3 Baths</span>
+                            <span><i class="fas fa-ruler-combined"></i> 2,128 sq.ft.</span>
+                        </div>
+                        <p class="listing-desc">Spacious home in West Edmonton with 5 bedrooms and 3 bathrooms. Features finished basement, double garage, and quiet street location perfect for families.</p>
+                        <a href="https://www.sterlingedmonton.com/quick-possessions/?page=1&sqft_range=sqft-2400_5000" class="btn" target="_blank" rel="noopener">View Details</a>
+                    </div>
+                </div>
+                
+                <a href="https://www.sterlingedmonton.com/quick-possessions/?page=1&sqft_range=sqft-2400_5000" class="view-more" target="_blank" rel="noopener">
+                    <i class="fas fa-search-plus"></i>
+                    <h3>View More Listings</h3>
+                    <p>Explore our full portfolio of available properties in Edmonton and surrounding areas</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Edmonton Section -->
+    <section class="section why-edmonton" id="why-edmonton">
+        <div class="container">
+            <h2 class="section-title">Why Invest in Edmonton?</h2>
+            <div class="why-content">
+                <div class="why-text">
+                    <p>Edmonton stands out as one of Canada's most promising real estate markets, offering a unique blend of affordability, growth potential, and quality of life. With some of the most competitive home prices among major Canadian cities, Edmonton provides excellent opportunities for first-time buyers and investors alike.</p>
+                    <p>The city's strong and diverse economy, anchored by energy, technology, education, and healthcare sectors, provides stability for long-term property value. Ongoing infrastructure investments and population growth continue to drive demand in both established neighborhoods and new developments.</p>
+                    <p>Edmonton's vibrant cultural scene, world-class festivals, abundant green spaces, and family-friendly communities make it an exceptional place to live. Combine this with Alberta's low property taxes and no provincial sales tax, and you have one of Canada's most attractive real estate markets.</p>
+                    <a href="#contact" class="btn btn-accent">Contact Me to Learn More</a>
+                </div>
+                <div class="why-img">
+                    <img src="edmonton.jpg" alt="Edmonton Skyline">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agent Section -->
+    <section class="section agent">
+        <div class="container">
+            <h2 class="section-title">Meet Manvir Chandhok</h2>
+            <div class="agent-content">
+                <div class="agent-img">
+                    <img src="Screenshot 2025-07-07 222753.jpg" alt="Manvir Chandhok">
+                </div>
+                <div class="agent-info">
+                    <h3>Manvir Chandhok, MBA</h3>
+                    <span class="agent-title">Real Estate Professional</span>
+                    <p class="agent-bio">With an MBA and two academic degrees, I've successfully helped clients buy and sell over 50 homes across Alberta. My approach combines professional expertise with personalized service to deliver exceptional results.</p>
+                    <ul class="agent-stats">
+                        <li>50+ homes sold across Alberta</li>
+                        <li>MBA and two academic degrees</li>
+                        <li>Trusted by many satisfied clients</li>
+                        <li>Expert in residential and investment properties</li>
+                        <li>Committed to your real estate success</li>
+                    </ul>
+                    <a href="https://www.sterlingrealestate.ca/edmonton-real-estate.php" class="btn" target="_blank" rel="noopener">View My Portfolio</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get in Touch</h2>
+            <div class="contact-content">
+                <p>Ready to begin your real estate journey or have questions about the Edmonton market? Contact me today for a consultation.</p>
+                <a href="mailto:manvir_c@yahoo.co.in" class="contact-email">manvir_c@yahoo.co.in</a>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=manvir_c@yahoo.co.in" class="btn" target="_blank" rel="noopener">Email Me</a>
+                <!-- Social links removed from contact section to avoid duplicates -->
+            </div>
+        </div>
+    </section>
+                            <img src="linkedin.jpg" alt="LinkedIn" class="footer-social-img" />
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="footer-logo">Manvir<span>Chandhok</span></div>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/manvir-chandhok/" class="social-link" target="_blank" rel="noopener" title="LinkedIn">
+                            <img src="linkedin.jpg" alt="LinkedIn" class="footer-social-img" />
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://www.instagram.com/manvirchandhokrealestate/" class="social-link" target="_blank" rel="noopener" title="Instagram">
+                            <img src="instagram.jpg" alt="Instagram" class="footer-social-img" />
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/manvir.singh.chandhok" class="social-link" target="_blank" rel="noopener" title="Facebook">
+                            <img src="Facebook_icon.svg.jpg" alt="Facebook" class="footer-social-img" />
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#listings">Listings</a></li>
+                        <li><a href="#why-edmonton">Why Edmonton</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-title">Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://www.sterlingedmonton.com/resources/landscaping-seasonal/" target="_blank" rel="noopener">Landscaping & Seasonal</a></li>
+                        <li><a href="https://www.sterlingedmonton.com/resources/for-realtors/" target="_blank" rel="noopener">For Realtors</a></li>
+                        <li><a href="https://www.sterlingedmonton.com/about-us/meet-the-team/" target="_blank" rel="noopener">Meet the Team</a></li>
+                        <li><a href="https://www.sterlingedmonton.com/careers/" target="_blank" rel="noopener">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-title">Contact Info</h4>
+                    <ul class="footer-contact-info">
+                        <li><i class="fas fa-envelope"></i> manvir_c@yahoo.co.in</li>
+                        <li><i class="fas fa-phone"></i> (587) 568-8131</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Edmonton, Alberta</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Manvir Chandhok Realty. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Email Modal -->
+    <div class="modal" id="emailModal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h3 class="modal-title">Get Exclusive Listings</h3>
+            <form action="https://formsubmit.co/manvir_c@yahoo.co.in" method="POST">
+                <input type="hidden" name="_subject" value="New Real Estate Lead">
+                <input type="email" name="email" placeholder="Enter your email" required>
+                <button type="submit">Submit</button>
+                <!-- Add these hidden fields -->
+                <input type="hidden" name="_next" value="https://yourgithubusername.github.io/ManvirChandhok-Realty/thankyou.html">
+                <input type="hidden" name="_captcha" value="false">
+            </form>
+        </div>
+    </div>
+
+    <!-- Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    
+    <script>
+        // Mobile Navigation
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // Fixed Back-to-Top Functionality
+        const backToTop = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('active');
+            } else {
+                backToTop.classList.remove('active');
+            }
+        });
+        backToTop.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        // Smooth scrolling for all links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Email Modal
+        const emailModal = document.getElementById('emailModal');
+        const modalClose = document.querySelector('.modal-close');
+        
+        // Show modal after delay or on scroll
+        let modalShown = false;
+        
+        function showModal() {
+            if (!modalShown && !getCookie('emailConsent')) {
+                emailModal.classList.add('active');
+                modalShown = true;
+            }
+        }
+        
+        setTimeout(showModal, 10000);
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 1000 && !modalShown && !getCookie('emailConsent')) {
+                showModal();
+            }
+        });
+        
+        // Close modal
+        modalClose.addEventListener('click', () => {
+            emailModal.classList.remove('active');
+        });
+        
+        // Close modal when clicking outside
+        window.addEventListener('click', (e) => {
+            if (e.target === emailModal) {
+                emailModal.classList.remove('active');
+            }
+        });
+        
+        // Form submission
+        const emailForm = document.getElementById('emailForm');
+        
+        emailForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const email = document.getElementById('userEmail').value.trim();
+            const name = document.getElementById('userName').value.trim();
+            const consent = document.getElementById('cookieConsent').checked;
+            
+            // Simple validation
+            if (!email || !consent) {
+                alert('Please provide a valid email and agree to receive communications.');
+                return;
+            }
+            
+            // Set cookie to remember consent
+            document.cookie = 'emailConsent=true; max-age=2592000; path=/'; // 30 days
+            
+            // Here you would typically send the data to your server
+            try {
+                // Simulate API call
+                console.log('Submitting form:', { email, name });
+                
+                // Show success message
+                alert('Thank you for subscribing! You will now receive exclusive listings and market updates.');
+                
+                // Close modal
+                emailModal.classList.remove('active');
+            } catch (error) {
+                console.error('Error submitting form:', error);
+                alert('There was an error submitting your information. Please try again later.');
+            }
+        });
+        
+        // Cookie helper function
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+        }
+        
+        // Initialize animations when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            // You could add more animations here if needed
+        });
+    </script>
+</body>
+</html>
