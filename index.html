@@ -1102,13 +1102,23 @@
         <div class="modal-content">
             <span class="modal-close">&times;</span>
             <h3 class="modal-title">Get Exclusive Listings</h3>
-            <form action="https://formsubmit.co/manvir_c@yahoo.co.in" method="POST">
-                <input type="hidden" name="_subject" value="New Real Estate Lead">
-                <input type="email" name="email" placeholder="Enter your email" required>
-                <button type="submit">Submit</button>
-                <!-- Add these hidden fields -->
-                <input type="hidden" name="_next" value="https://yourgithubusername.github.io/ManvirChandhok-Realty/thankyou.html">
-                <input type="hidden" name="_captcha" value="false">
+            <form action="https://formsubmit.co/manvir_c@yahoo.co.in" method="POST" id="emailForm">
+              <input type="hidden" name="_subject" value="New Lead from Website">
+              <input type="hidden" name="_next" value="https://arjan856.github.io/ManvirChandhokRealestate-/thank-you.html">
+              <input type="hidden" name="_captcha" value="false">
+              <div class="form-group">
+                <label for="userEmail" class="form-label">Email Address</label>
+                <input type="email" id="userEmail" name="email" class="form-control" placeholder="Enter your email" required>
+              </div>
+              <div class="form-group">
+                <label for="userName" class="form-label">Your Name</label>
+                <input type="text" id="userName" name="name" class="form-control" placeholder="Enter your name">
+              </div>
+              <div class="form-check">
+                <input type="checkbox" id="consent" name="consent" class="form-check-input" required>
+                <label for="consent">I agree to receive emails about new listings</label>
+              </div>
+              <button type="submit" class="btn form-submit">Subscribe</button>
             </form>
         </div>
     </div>
@@ -1208,39 +1218,11 @@
             }
         });
         
-        // Form submission
-        const emailForm = document.getElementById('emailForm');
-        
-        emailForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            const email = document.getElementById('userEmail').value.trim();
-            const name = document.getElementById('userName').value.trim();
-            const consent = document.getElementById('cookieConsent').checked;
-            
-            // Simple validation
-            if (!email || !consent) {
-                alert('Please provide a valid email and agree to receive communications.');
-                return;
-            }
-            
-            // Set cookie to remember consent
-            document.cookie = 'emailConsent=true; max-age=2592000; path=/'; // 30 days
-            
-            // Here you would typically send the data to your server
-            try {
-                // Simulate API call
-                console.log('Submitting form:', { email, name });
-                
-                // Show success message
-                alert('Thank you for subscribing! You will now receive exclusive listings and market updates.');
-                
-                // Close modal
-                emailModal.classList.remove('active');
-            } catch (error) {
-                console.error('Error submitting form:', error);
-                alert('There was an error submitting your information. Please try again later.');
-            }
+        // Form submission for FormSubmit.co
+        document.getElementById('emailForm').addEventListener('submit', function(e) {
+          e.preventDefault();
+          this.submit(); // Let FormSubmit handle it
+          emailModal.classList.remove('active');
         });
         
         // Cookie helper function
