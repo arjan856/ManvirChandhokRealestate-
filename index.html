@@ -1036,7 +1036,7 @@
             </div>
         </div>
     </section>
-                            <img src="linkedin.jpg" alt="LinkedIn" class="footer-social-img" />
+                            
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -1080,7 +1080,7 @@
                 <div class="footer-col">
                     <h4 class="footer-title">Contact Info</h4>
                     <ul class="footer-contact-info">
-                        <li><i class="fas fa-envelope"></i> manvir_c@yahoo.co.in</li>
+                        <li><i class="fas fa-envelope"></i> arjanchandhok@gmail.com</li>
                         <li><i class="fas fa-phone"></i> (587) 568-8131</li>
                         <li><i class="fas fa-map-marker-alt"></i> Edmonton, Alberta</li>
                     </ul>
@@ -1102,10 +1102,11 @@
         <div class="modal-content">
             <span class="modal-close">&times;</span>
             <h3 class="modal-title">Get Exclusive Listings</h3>
-            <form action="https://formsubmit.co/manvir_c@yahoo.co.in" method="POST" id="emailForm">
-              <input type="hidden" name="_subject" value="New Lead from Website">
+            <form action="https://formsubmit.co/arjanchandhok@gmail.com" method="POST" id="emailForm">
+              <input type="hidden" name="_subject" value="New Real Estate Lead - Priority!">
               <input type="hidden" name="_next" value="https://arjan856.github.io/ManvirChandhokRealestate-/thank-you.html">
               <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_template" value="table">
               <div class="form-group">
                 <label for="userEmail" class="form-label">Email Address</label>
                 <input type="email" id="userEmail" name="email" class="form-control" placeholder="Enter your email" required>
@@ -1116,9 +1117,9 @@
               </div>
               <div class="form-check">
                 <input type="checkbox" id="consent" name="consent" class="form-check-input" required>
-                <label for="consent">I agree to receive emails about new listings</label>
+                <label for="consent">I agree to receive property updates</label>
               </div>
-              <button type="submit" class="btn form-submit">Subscribe</button>
+              <button type="submit" class="btn form-submit">Get My Listings</button>
             </form>
         </div>
     </div>
@@ -1221,8 +1222,12 @@
         // Form submission for FormSubmit.co
         document.getElementById('emailForm').addEventListener('submit', function(e) {
           e.preventDefault();
-          this.submit(); // Let FormSubmit handle it
           emailModal.classList.remove('active');
+          // Backup: Redirect to thank-you page even if FormSubmit fails
+          setTimeout(() => {
+            window.location.href = "thank-you.html";
+          }, 1000);
+          this.submit(); // Send to FormSubmit
         });
         
         // Cookie helper function
@@ -1238,5 +1243,4 @@
         });
     </script>
 </body>
-    <input type="hidden" name="_autoresponse" value="Your custom message here">
 </html>
