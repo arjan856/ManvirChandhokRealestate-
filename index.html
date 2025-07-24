@@ -20,6 +20,12 @@
             content: "↑";
             font-size: 1.5em;
         }
+        /* Style for Get Listings link in navbar */
+        .get-listings-link {
+            color: var(--accent-color) !important;
+            font-weight: 700;
+            font-size: 1.05em;
+        }
         /* Global Styles */
         :root {
             --primary-color: #1976d2;
@@ -757,6 +763,13 @@
         .form-submit {
             width: 100%;
         }
+
+        .form-note {
+            font-size: 0.9rem;
+            color: #666;
+            margin: 10px 0;
+            text-align: center;
+        }
         
         /* Animations */
         @keyframes fadeInUp {
@@ -861,7 +874,7 @@
         <div class="container navbar-container">
             <a href="#" class="logo">Manvir<span>Chandhok</span></a>
             <div class="nav-links">
-                <a href="#home">Home</a>
+                <a href="#" id="getListingsNav" class="get-listings-link">Get Listings</a>
                 <a href="#about">About</a>
                 <a href="#listings">Listings</a>
                 <a href="#why-edmonton">Why Edmonton</a>
@@ -955,10 +968,10 @@
                 </div>
                 
                 <div class="listing-card">
-                        <div class="listing-img-container">
-                    <img src="./assurance-home.jpg" alt="West Edmonton Home" class="listing-img">
-                    <span class="listing-badge">Move-In Ready</span>
-                         </div>
+                    <div class="listing-img-container">
+                        <img src="assurance-home.jpg" alt="West Edmonton Home" class="listing-img">
+                        <span class="listing-badge">Move-In Ready</span>
+                    </div>
                     <div class="listing-details">
                         <div class="listing-price">$709,900</div>
                         <div class="listing-address">2828 191 STREET NW Edmonton</div>
@@ -1112,12 +1125,15 @@
                 <input type="email" id="userEmail" name="email" class="form-control" placeholder="Enter your email" required>
               </div>
               <div class="form-group">
-                <label for="userName" class="form-label">Your Name</label>
-                <input type="text" id="userName" name="name" class="form-control" placeholder="Enter your name">
+              <div class="form-note">
+                *No need to sign up if you've already submitted your details
               </div>
               <div class="form-check">
                 <input type="checkbox" id="consent" name="consent" class="form-check-input" required>
                 <label for="consent">I agree to receive property updates</label>
+              </div>
+              <div class="form-note">
+                *No need to sign up if you've already submitted your details
               </div>
               <button type="submit" class="btn form-submit">Get My Listings</button>
             </form>
@@ -1131,18 +1147,24 @@
         // Mobile Navigation
         const hamburger = document.querySelector('.hamburger');
         const navLinks = document.querySelector('.nav-links');
-        
+        const getListingsNav = document.getElementById('getListingsNav');
+        const emailModal = document.getElementById('emailModal');
+        const modalClose = document.querySelector('.modal-close');
+        let modalShown = false;
+
         hamburger.addEventListener('click', () => {
             navLinks.classList.toggle('active');
         });
-        
-        // Close mobile menu when clicking a link
+
+        // Close mobile menu when clicking a link (except Get Listings)
         document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-            });
+            if (!link.classList.contains('get-listings-link')) {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                });
+            }
         });
-        
+
         // Navbar scroll effect
         window.addEventListener('scroll', () => {
             const navbar = document.querySelector('.navbar');
@@ -1152,7 +1174,7 @@
                 navbar.classList.remove('scrolled');
             }
         });
-        
+
         // Fixed Back-to-Top Functionality
         const backToTop = document.querySelector('.back-to-top');
         window.addEventListener('scroll', () => {
@@ -1169,56 +1191,55 @@
                 behavior: 'smooth'
             });
         });
-        // Smooth scrolling for all links
+
+        // Smooth scrolling for all links except Get Listings
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 70,
-                        behavior: 'smooth'
-                    });
-                }
-            });
+            if (!anchor.classList.contains('get-listings-link')) {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 70,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            }
         });
-        
-        // Email Modal
-        const emailModal = document.getElementById('emailModal');
-        const modalClose = document.querySelector('.modal-close');
-        
-        // Show modal after delay or on scroll
-        let modalShown = false;
-        
+
+        // Show modal on page load
         function showModal() {
             if (!modalShown && !getCookie('emailConsent')) {
                 emailModal.classList.add('active');
                 modalShown = true;
             }
         }
-        
-        setTimeout(showModal, 10000);
-        
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 1000 && !modalShown && !getCookie('emailConsent')) {
-                showModal();
-            }
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(showModal, 1000); // Show after 1s
         });
-        
+
+        // Show modal when clicking Get Listings in navbar
+        getListingsNav.addEventListener('click', function(e) {
+            e.preventDefault();
+            emailModal.classList.add('active');
+            modalShown = true;
+        });
+
         // Close modal
         modalClose.addEventListener('click', () => {
             emailModal.classList.remove('active');
         });
-        
+
         // Close modal when clicking outside
         window.addEventListener('click', (e) => {
             if (e.target === emailModal) {
                 emailModal.classList.remove('active');
             }
         });
-        
+
         // Form submission for FormSubmit.co
         document.getElementById('emailForm').addEventListener('submit', function(e) {
           e.preventDefault();
@@ -1229,14 +1250,14 @@
           }, 1000);
           this.submit(); // Send to FormSubmit
         });
-        
+
         // Cookie helper function
         function getCookie(name) {
             const value = `; ${document.cookie}`;
             const parts = value.split(`; ${name}=`);
             if (parts.length === 2) return parts.pop().split(';').shift();
         }
-        
+
         // Initialize animations when page loads
         document.addEventListener('DOMContentLoaded', () => {
             // You could add more animations here if needed
