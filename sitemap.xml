@@ -1,28 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://arjan856.github.io/ManvirChandhokRealestate-/</loc>
-    <lastmod>2024-07-20</lastmod>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://arjan856.github.io/ManvirChandhokRealestate-/about</loc>
-    <lastmod>2024-07-20</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://arjan856.github.io/ManvirChandhokRealestate-/listings</loc>
-    <lastmod>2024-07-20</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://arjan856.github.io/ManvirChandhokRealestate-/why-edmonton</loc>
-    <lastmod>2024-07-20</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://arjan856.github.io/ManvirChandhokRealestate-/contact</loc>
-    <lastmod>2024-07-20</lastmod>
-    <priority>0.6</priority>
-  </url>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://arjan856.github.io/ManvirChandhokRealestate-/</loc>
+  <lastmod>2025-07-25T05:58:08+00:00</lastmod>
+</url>
+
+
 </urlset>
