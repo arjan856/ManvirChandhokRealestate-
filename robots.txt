@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://arjan856.github.io/ManvirChandhokRealestate-/sitemap.xml
